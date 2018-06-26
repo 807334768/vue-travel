@@ -91,7 +91,6 @@
 		 .swiper-slide-active
 			height:0
 			padding-bottom:50%
-			background:green
 			 
 		.icon
 			position:relative
@@ -100,7 +99,6 @@
 			height:0
 			float:left
 			padding-bottom: 25%
-			background:red
 			.icon-img
 				position:absolute
 				top:0
@@ -109,7 +107,6 @@
 				bottom:0.44rem
 				box-sizing:border-box
 				padding:.1rem
-				background:yellow
 			.icon-img img
 				width:100%
 				display:block
