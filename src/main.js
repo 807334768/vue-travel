@@ -11,8 +11,14 @@ import 'styles/border.css'
 import fastClick from 'fastclick'
 /* 引入iconfont */
 import "styles/iconfont.css"
+/* 引入vue-awesome-swiper */
+import VueAwesomeSwiper from 'vue-awesome-swiper' 
+import "swiper/dist/css/swiper.css"
+
+Vue.use(VueAwesomeSwiper)
 
 Vue.config.productionTip = false
+
 fastClick.attach(document.body)/* attach是faseClcik自带的方法，绑定到docoument.body上 */
 /* eslint-disable no-new */
 new Vue({
