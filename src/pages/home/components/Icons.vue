@@ -11,7 +11,7 @@
 					<p class="icon-desc">{{item.desc}}</p>
 				</div>
 		    </swiper-slide>
-		    <div class="swiper-pagination"  slot="pagination"></div>
+		 
 	 	</swiper>
 		
 	</div>
@@ -62,12 +62,14 @@
 						imgUrl:'http://via.placeholder.com/100x100',
 						desc:'景点门票'
 					},
+					{
+						id:'008',
+						imgUrl:'http://via.placeholder.com/100x100',
+						desc:'景点门票'
+					},
 					
 				],
-				swiperOption:{
-					pagination:".swiper-pagination",
-					 
-				},
+				swiperOption:{},
 			}
 		},
 		computed:{
