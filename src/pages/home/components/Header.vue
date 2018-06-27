@@ -7,14 +7,17 @@
  		<span class="iconfont">&#xe632;</span>
  		输入游玩</div>
  	<div class="header-right">
- 		城市
+ 		{{city}}
  		<span class="iconfont arrow-icon">&#xe65e;</span>
  	</div>
  </div>
 </template>
 <script type="text/javascript">
 	export default{
-		name:'HomeHeader'
+		name:'HomeHeader',
+		props:{
+			city:String
+		}
 	}
 </script>
 <style lang='stylus' scoped>

@@ -19,63 +19,20 @@
 <script type="text/javascript">
 	export default{
 		name:'HomeIcons',
+		props:{
+			list:Array
+		},
 		data (){
 			return{
-				iconList:[
-					{
-						id:'001',
-						imgUrl:'http://via.placeholder.com/100x100',
-						desc:'景点门票景点门票景点门票'
-					},
-					{
-						id:'002',
-						imgUrl:'http://via.placeholder.com/100x100',
-						desc:'滑雪季节'
-					},
-					{
-						id:'003',
-						imgUrl:'http://via.placeholder.com/100x100',
-						desc:'泡温泉'
-					},
-					{
-						id:'004',
-						imgUrl:'http://via.placeholder.com/100x100',
-						desc:'动物植物园'
-					},
-					{
-						id:'005',
-						imgUrl:'http://via.placeholder.com/100x100',
-						desc:'景点门票'
-					},
-					{
-						id:'006',
-						imgUrl:'http://via.placeholder.com/100x100',
-						desc:'景点门票'
-					},
-					{
-						id:'007',
-						imgUrl:'http://via.placeholder.com/100x100',
-						desc:'景点门票'
-					},
-					{
-						id:'008',
-						imgUrl:'http://via.placeholder.com/100x100',
-						desc:'景点门票'
-					},
-					{
-						id:'008',
-						imgUrl:'http://via.placeholder.com/100x100',
-						desc:'景点门票'
-					},
-					
-				],
-				swiperOption:{},
+				swiperOption:{
+					autoplay:false
+				},
 			}
 		},
 		computed:{
 			 pages (){
 			 	const pages=[]
-				this.iconList.forEach((item,index)=>{
+				this.list.forEach((item,index)=>{
 					const page=Math.floor(index/8)
 					if(!pages[page]){
 						pages[page]=[]
@@ -110,7 +67,7 @@
 				box-sizing:border-box
 				padding:.1rem
 			.icon-img img
-				width:100%
+				width:auto
 				display:block
 				height:100%
 				margin:  0 auto 
