@@ -15,6 +15,8 @@ import "styles/iconfont.css"
 import VueAwesomeSwiper from 'vue-awesome-swiper' 
 import "swiper/dist/css/swiper.css"
 
+import store from './store'
+
 Vue.use(VueAwesomeSwiper)
 
 Vue.config.productionTip = false
@@ -24,6 +26,7 @@ fastClick.attach(document.body)/* attach是faseClcik自带的方法，绑定到d
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

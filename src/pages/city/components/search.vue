@@ -6,7 +6,10 @@
 		<div v-show='keyword' 
 			class="search-content" ref='search'> 
 			<ul>
-				<li  class='search-item border-bottom' v-for="item of list" :key="item.id">{{item.name}}</li>
+				<li  class='search-item border-bottom'
+					 v-for="item of list" :key="item.id"
+					 @click="handleCityClick(item.name)"
+					 >{{item.name}}</li>
 				<li v-show="hasNoData" class='search-item border-bottom'>
 					没有找到匹配数据
 				</li>
@@ -60,6 +63,14 @@ import BScroll from 'better-scroll'
 			hasNoData (){
 				return !this.list.length
 			}
+		},
+		methods:{
+			handleCityClick (city){
+				alert(city)
+		 		this.$store.commit('chagneCity2',city);
+		 		//this.keyword=""
+		 		this.$router.push('/home')
+		 	}
 		}
 	}
 </script>
