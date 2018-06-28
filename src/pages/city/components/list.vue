@@ -18,7 +18,10 @@
 					 
 				</div>
 			</div>
-			<div class="area" v-for="(item,key) of cities"> 
+			<div class="area area-city" 
+				v-for="(item,key) of cities"
+				 :key="key" ref='key'
+				> 
 				<div class="title border-topbottom">{{key}}</div>
 				<div class="item-list">
 					<div class="item border-bottom"
@@ -26,10 +29,7 @@
 						>
 						{{innerItem.name}}
 					</div>
-					
 				</div>
-				
-				
 			</div>
 		</div>	
 	</div>
@@ -38,10 +38,33 @@
 import BScroll from 'better-scroll'
 	export default {
 		name:'CityList',
-		props:['cities','hotCities'],
+		props:{
+			cities:Object,
+			hotCities:Array,
+			letter:String
+		},
+		data (){
+			return {
+				myscroll:null,
+			}
+		},
+		
+		watch:{
+			
+			letter:function (){
+				console.log("sssbbb",this.letter)
+				if(this.letter){//如果this.letter不为空
+					console.log('aaaaaaaabbb-===',this.$refs[this.letter])
+			 		this.myscroll.scrollToElement(this.letter)//BScroll的方法
+				}
+		
+			},
+		},	
 		mounted(){
-			this.scroll=new BScroll(this.$refs.wrapper)
-		}
+			this.myscroll=new BScroll(this.$refs.wrapper)
+		},
+		 methods:{
+		 },
 	}
 </script>
 <style lang="stylus" scoped="scoped">
@@ -67,6 +90,7 @@ import BScroll from 'better-scroll'
 		background:#eee 
 		color:#666
 		font-size:.26rem
+		text-indent:.1rem
 	.button-list
 		background:#fff
 		overflow:hidden
