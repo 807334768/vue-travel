@@ -20,7 +20,7 @@
 			</div>
 			<div class="area area-city" 
 				v-for="(item,key) of cities"
-				 :key="key" ref='key'
+				 :key="key" :ref='key'
 				> 
 				<div class="title border-topbottom">{{key}}</div>
 				<div class="item-list">
@@ -48,20 +48,26 @@ import BScroll from 'better-scroll'
 				myscroll:null,
 			}
 		},
-		
 		watch:{
-			
 			letter:function (){
-				console.log("sssbbb",this.letter)
-				if(this.letter){//如果this.letter不为空
-					console.log('aaaaaaaabbb-===',this.$refs[this.letter])
-			 		this.myscroll.scrollToElement(this.letter)//BScroll的方法
+				console.log("我我我我我",this.letter)
+				this.$nextTick(function () {
+			  	 if(this.letter){//如果this.letter不为空
+			  		console.log(this.$refs[this.letter])
+					console.log('===',this.$refs[this.letter][0])
+			 		this.myscroll.scrollToElement(this.$refs[this.letter][0])//BScroll的方法
 				}
+			  })
+			 
+				
 		
 			},
 		},	
 		mounted(){
-			this.myscroll=new BScroll(this.$refs.wrapper)
+			  this.$nextTick(function () {
+			  	this.myscroll=new BScroll(this.$refs.wrapper)
+			  })
+			
 		},
 		 methods:{
 		 },

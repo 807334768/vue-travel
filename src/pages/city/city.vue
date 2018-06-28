@@ -3,7 +3,7 @@
 		<city-header></city-header>
 		<city-search></city-search>
 		<city-list :cities="cities"  :hotCities="hotCities"
-			:letter="changeLetter"></city-list>
+			:letter="letter"></city-list>
 		<city-alphabet :cities="cities" 
 			@change="handleLetterChange"
 			
@@ -28,7 +28,7 @@ import axios from 'axios'
 			return {
 				cities:{},
 				hotCities:[],
-				changeLetter:''
+				letter:''
 			}
 		},
 		mounted(){
@@ -48,7 +48,7 @@ import axios from 'axios'
 			},
 			handleLetterChange(letter){
 				console.log("执行2",letter)
-				this.changeLetter=letter
+				this.letter=letter
 			},
 		}
 	}

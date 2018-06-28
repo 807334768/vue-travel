@@ -41,8 +41,8 @@
 		},
 		methods:{
 			handleLetterClick(e){
-				console.log("执行1",e.target.innerHTML)
-				this.$emit('change',e.target.innerHTML)
+				console.log("执行1",e.target.innerText)
+				this.$emit('change',e.target.innerText)
 			},
 			handleTouchStart (){
 				this.touchStatus=true
