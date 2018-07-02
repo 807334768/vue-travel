@@ -30,10 +30,7 @@
 		 		opacityStyle:{opacity:1}
 		 	}
 		 },
-		 created (){
-		 	
-		 	window.addEventListener('scroll',this.handleScroll)
-		 },
+		 
 		 methods:{
 		 	handleScroll(){
 		 		const top =document.documentElement.scrollTop
@@ -50,7 +47,14 @@
 		 		}
 		 		//console.log(document.documentElement.scrollTop)
 		 	}
-		 }
+		 },
+		 created (){
+		 	
+		 	window.addEventListener('scroll',this.handleScroll)
+		 },
+		 destroyed(){
+		 	window.removeEventListener('scroll',this.handleScroll)
+		 },
 	}
 </script>
 <style lang="stylus" scoped>
