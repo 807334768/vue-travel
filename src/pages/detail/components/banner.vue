@@ -1,7 +1,7 @@
 <template>
 	<div>
 			<div class="banner" @click='handleClick'>
-				<img class="banner-img" src="http://via.placeholder.com/350x350" alt="" />
+				<img class="banner-img" src="http://via.placeholder.com/350x150" alt="" />
 				<div class='banner-info'>
 					<div class="banner-title">
 						大连圣亚海洋世界（AAAA景区）
