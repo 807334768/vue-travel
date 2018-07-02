@@ -1,17 +1,21 @@
 <template>
 	<div>
 		
-		<banner></banner>
+		<banner :sightName="sightName" :bannerImg='bannerImg'
+			:bannerImgs="gallaryImgs"
+			></banner>
 		<detail-header></detail-header>
 		 <detail-list :list="list"></detail-list>
+		 <div class="content"></div>
 	</div>
 </template>
 <script >
 import banner from "./components/banner"
 import detailHeader from "./components/header"
 import detailList from "./components/list"
+import axios from 'axios'
 	export default {
-		name:'Detail',
+		name:'detail',
 		components:{
 			banner,
 			detailHeader,
@@ -19,76 +23,37 @@ import detailList from "./components/list"
 		},
 		data (){
 			return {
-				list:[
-					{
-						title:'成人票',
-						children:[
-							{
-								title:"成人三馆联票",
-								children:[{
-									title:'成人三馆联票 - 01',
-									children:[
-										{
-											title:'成人三馆联票 - 01-01'
-										}
-									]
-								},{
-									title:"成人三馆联票 - 00"
-								}]
-							}
-						]
-					},
-					{
-						title:'学生票',
-						children:[
-							{
-								title:"学生三馆联票",
-								childred:[{
-									title:'学生三馆联票 - 01'
-								},{
-									title:'学生三馆联票 - 02'
-								},{
-									title:'学生三馆联票 - 03'
-								}]
-							}
-						]
-					},
-					{
-						title:'儿童票',
-						children:[
-							{
-								title:"儿童三馆联票",
-								childred:[{
-									title:'儿童三馆联票 - 01'
-								}]
-							}
-						]
-					},
-					{
-						title:'特惠票',
-						children:[
-							{
-								title:"特惠三馆联票",
-								childred:[{
-									title:'特惠三馆联票 - 01'
-								},
-								{
-									title:'特惠三馆联票 - 01'
-								},
-								{
-									title:'特惠三馆联票 - 01'
-								},
-								{
-									title:'特惠三馆联票 - 01'
-								},{
-									title:'特惠三馆联票 - 01'
-								}]
-							}
-						]
-					}
-				]
+				sightName:'',
+				bannerImg:'',
+				gallaryImgs:[],
+				list:[]
 			}
 		},
+		mounted (){
+			this.getDetailInfo()
+		},
+		methods:{
+			getDetailInfo(){
+				console.log(this.$route)
+				axios.get('/api/home/detail.json',{
+					params:{
+						id:this.$route.id
+					}
+				}).then(this.handleGetDataSucc)
+			},
+			handleGetDataSucc(res){
+			
+				res=res.data 
+				if(res.ret&&res.data){
+						console.log(res)
+						const data=res.data 
+					this.sightName=data.sightName	
+					this.bannerImg=data.bannerImg
+					this.gallaryImgs=data.gallaryImgs
+					this.list=data.categoryList
+				}
+			}
+		}
 	}
 </script>
 <style lang="stylus" scoped>

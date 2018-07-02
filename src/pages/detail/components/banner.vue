@@ -1,36 +1,42 @@
 <template>
 	<div>
 			<div class="banner" @click='handleClick'>
-				<img class="banner-img" src="http://via.placeholder.com/350x150" alt="" />
+				<img class="banner-img" :src="bannerImg" alt="" />
 				<div class='banner-info'>
 					<div class="banner-title">
-						大连圣亚海洋世界（AAAA景区）
+						{{sightName}}
 					</div>
 					<div class="banner-number">
-						<span class="iconfont">&#xe604;</span>9
+						<span class="iconfont">&#xe604;</span>{{this.bannerImgs.length}}
 					</div>
 				</div>
 			</div>
-			<common-gallary 
-				:imgs="imgs" v-show='showGallary'
+			<fade-animation>
+				<common-gallary 
+				:imgs="bannerImgs" v-show='showGallary'
 				@close="handleGarllaryClose"></common-gallary>
+			</fade-animation>
+			
 	</div>
 
 </template>
 <script>
 import CommonGallary from "common/gallary/gallary"
-
+import fadeAnimation from "common/fade/fade"
 	export default { 
 		name:'DetailBanner',
 		components:{
-			CommonGallary
+			CommonGallary,fadeAnimation
 		},
-		props:{},
+		props:{
+			sightName:String,
+			bannerImg:String,
+			bannerImgs:Array
+		},
 		data (){
 			return {
 				showGallary:false,
-				imgs:["http://via.placeholder.com/350x350",
-				"http://via.placeholder.com/350x350"]
+				 
 			}
 		},
 		methods:{
@@ -49,7 +55,6 @@ import CommonGallary from "common/gallary/gallary"
 	overflow:hidden
 	height:0
 	padding-bottom:43%
-	background:red
 	.banner-img
 		width:100%
 	.banner-info

@@ -48,11 +48,10 @@
 		 		//console.log(document.documentElement.scrollTop)
 		 	}
 		 },
-		 created (){
-		 	
+		 activated (){
 		 	window.addEventListener('scroll',this.handleScroll)
 		 },
-		 destroyed(){
+		 deactivated(){
 		 	window.removeEventListener('scroll',this.handleScroll)
 		 },
 	}
@@ -66,11 +65,12 @@
 	width:.8rem
 	height:.8rem
 	border-radius:.4rem
-	background:rgba(0,0,0,.5)
+	background:rgba(0,0,0,.3)
 	text-align:center
 	line-height:.8rem
 	.header-abs-back
 		font-size:.4rem
+		color:#000
 		
 .header-fixed
 	position:fixed
@@ -82,6 +82,7 @@
 	text-align:center
 	color:#fff
 	background:$bgColor
+	z-index:1
 	font-size:.32remall
 	.header-fixed-back
 		position:absolute
