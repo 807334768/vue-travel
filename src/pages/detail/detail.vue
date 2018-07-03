@@ -35,7 +35,7 @@ import axios from 'axios'
 		methods:{
 			getDetailInfo(){
 				console.log(this.$route)
-				axios.get('/api/home/detail.json',{
+				axios.get('/api/returnJson',{
 					params:{
 						id:this.$route.id
 					}

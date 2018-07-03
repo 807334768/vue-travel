@@ -1,20 +1,20 @@
 <template>
-	<div>
-		<home-header ></home-header>
-		<home-swiper :list="swiperList"></home-swiper>
-		<home-icons :list='iconList'></home-icons>
-		<home-recommend :list="recommendList"></home-recommend>
-		<home-weekend :list="weekendList"></home-weekend>
-	</div>
+<div>
+<home-header></home-header>
+<home-swiper :list="swiperList"></home-swiper>
+<home-icons :list='iconList'></home-icons>
+<home-recommend :list="recommendList"></home-recommend>
+<home-weekend :list="weekendList"></home-weekend>
+</div>
 
  
 </template>
 <script type="text/javascript">
-import HomeHeader from "./components/Header"
+import HomeHeader from './components/Header'
 import HomeSwiper from './components/Swiper'
 import HomeIcons from './components/Icons'
 import HomeRecommend from './components/Recommend'
-import HomeWeekend from "./components/Weekend"
+import HomeWeekend from './components/Weekend'
 import axios from "axios"
 	export default{
 		name:'Home',
@@ -40,7 +40,9 @@ import axios from "axios"
 		},
 		methods:{
 			getHomeInfo(){
-				axios.get("/api/home/index.json").then(this.getHomeInfoSucc)
+				
+				//axios.get("/api/returnJson").then(this.getHomeInfoSucc)
+				axios.get("/mistake/queryMistake?merNo=&relInst=&relCompany=&tranCardNo=&mistakeType=+&tranAmount=&flag=+&recDateStart=&recDateEnd=&repDateStart=&repDateEnd=&currentPage=1&numPerPage=6").then(this.getHomeInfoSucc)
 			},
 			getHomeInfoSucc(res){
 				console.log(res)

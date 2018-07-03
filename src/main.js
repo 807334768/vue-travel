@@ -10,12 +10,14 @@ import 'styles/border.css'
 /* 引入第三方模块，解决移动端某些机型上的300毫秒点击延迟的问题 */
 import fastClick from 'fastclick'
 /* 引入iconfont */
-import "styles/iconfont.css"
+import 'styles/iconfont.css'
 /* 引入vue-awesome-swiper */
 import VueAwesomeSwiper from 'vue-awesome-swiper' 
-import "swiper/dist/css/swiper.css"
+import 'swiper/dist/css/swiper.css'
 
 import store from './store'
+
+import 'babel-polyfill'
 
 Vue.use(VueAwesomeSwiper)
 

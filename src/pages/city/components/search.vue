@@ -8,8 +8,7 @@
 			<ul>
 				<li  class='search-item border-bottom'
 					 v-for="item of list" :key="item.id"
-					 @click="handleCityClick(item.name)"
-					 >{{item.name}}</li>
+					 @click="handleCityClick(item.name)">{{item.name}}</li>
 				<li v-show="hasNoData" class='search-item border-bottom'>
 					没有找到匹配数据
 				</li>

@@ -11,11 +11,15 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {//请求转发，当请求api接口时转发到本地指定目录
-    	'/api':{
+    	/*'/api':{
     		target:'http://localhost:8080',
     		pathRewrite:{
     			"^/api/home":"/static/mock"
     		}
+      		//target:'http://192.168.137.1:8089',
+    	}*/
+    	"/mistake" :{
+    		target:"http://192.168.15.146:8080/"
     	}
     },
 

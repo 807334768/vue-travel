@@ -1,27 +1,28 @@
 <template>
-	 <div class='header'>
- 	<div class='header-left'>
- 		<span class="iconfont back-icon">&#xe624;</span>
- 	</div>
- 	<div class="header-input">
- 		<span class="iconfont">&#xe632;</span>
- 		输入游玩</div>
- 
- 	<router-link to='/city'>
- 		<div class="header-right">
-	 		{{this.$store.state.city}}
-	 		<span class="iconfont arrow-icon">&#xe65e;</span>
-	 	</div>
- 	</router-link>
- </div>
+		<div class='header'>
+		 	<div class='header-left'>
+		 		<span class="iconfont back-icon">&#xe624;</span>
+		 	</div>
+		 	<div class="header-input">
+		 		<span class="iconfont">&#xe632;</span>
+		 		输入游玩
+		 	</div>
+		 
+		 	<router-link to='/city'>
+		 		<div class="header-right">
+			 		{{this.$store.state.city}}
+			 		<span class="iconfont arrow-icon">&#xe65e;</span>
+			 	</div>
+		 	</router-link>
+ 		</div>
 </template>
-<script type="text/javascript">
-	export default{
+<script>
+export default{
 		name:'HomeHeader',
 		props:{
 			city:String
 		}
-	}
+}
 </script>
 <style lang='stylus' scoped>
 @import "~styles/varibles.styl"

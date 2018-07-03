@@ -9,8 +9,7 @@
 			 <div class='header-fixed' v-show="!showAbs"
 			 	:style="opacityStyle">
 			 	 <router-link tag='div' 
-			 	 	to="/home" 
-			 	 	>
+			 	 	to="/home" >
 				 	<span class="iconfont header-fixed-back">&#xe624;</span>
 				 </router-link>
 				 景点详情

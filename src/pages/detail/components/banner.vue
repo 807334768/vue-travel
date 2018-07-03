@@ -21,8 +21,8 @@
 
 </template>
 <script>
-import CommonGallary from "common/gallary/gallary"
-import fadeAnimation from "common/fade/fade"
+import CommonGallary from 'common/gallary/gallary'
+import fadeAnimation from 'common/fade/fade'
 	export default { 
 		name:'DetailBanner',
 		components:{

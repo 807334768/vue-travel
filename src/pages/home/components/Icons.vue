@@ -1,7 +1,7 @@
 <template>
 	<div class="icons">
 		
-		<swiper :options="swiperOption" >
+		<swiper :options="swiperOption">
 		    <!-- slides -->
 		    <swiper-slide v-for="(page,index ) of pages" :key='index'>
 		    	<div class="icon" v-for="item of page">
@@ -16,7 +16,7 @@
 		
 	</div>
 </template>
-<script type="text/javascript">
+<script>
 	export default{
 		name:'HomeIcons',
 		props:{

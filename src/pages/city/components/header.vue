@@ -8,9 +8,9 @@
 	</div>
 </template>
 <script>
-	export default {
-		name:'CityHeader'
-	}
+export default {
+	ame:'CityHeader'
+}
 </script>
 <style lang="stylus" scoped="scoped">
 @import "~styles/varibles.styl"

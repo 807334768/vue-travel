@@ -3,11 +3,10 @@
 		<ul class="list">
 			<li class="item" v-for="item of letters"
 				@click="handleLetterClick"
-				@touchstart="handleTouchStart"
+				@touchstart.prevent="handleTouchStart"
 				@touchmove="handleTouchMove"
 				@touchend="handleTouchEnd"
-				:ref='item'
-			>
+				:ref='item'>
 				{{item}}
 			</li>
 		</ul>
@@ -20,7 +19,7 @@
 		props:{
 			cities:Object,
 		},
-		data(){
+		data () {
 			return {
 				touchStatus:false,
 				startY:0,
@@ -39,7 +38,7 @@
 				return letters
 			}
 		},
-		methods:{
+		methods: {
 			handleLetterClick(e){
 				console.log("执行1",e.target.innerText)
 				this.$emit('change',e.target.innerText)
